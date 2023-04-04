@@ -41,6 +41,23 @@ export default [
         compact: true,
       },
     ],
+    plugins: [
+      del({ targets: "dist/*" }),
+      nodeResolve({ preferBuiltins: false }),
+      ts({
+        tsconfig: resolve(__dirname, "tsconfig.json"),
+        browserslist: false,
+      }),
+      postcss({
+        plugins: [require("tailwindcss"), require("autoprefixer")],
+        minimize: true,
+        extract: { fileName: "index.scss" },
+      }),
+      external(),
+      image(),
+      commonjs(),
+      terser(),
+    ],
 
     external: [/node_modules/],
   },
