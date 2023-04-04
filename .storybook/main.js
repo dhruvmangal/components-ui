@@ -1,4 +1,8 @@
-/** @type { import('@storybook/react-webpack5').StorybookConfig } */
+/**
+ * @format
+ * @type { import('@storybook/react-webpack5').StorybookConfig }
+ */
+
 const config = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
@@ -6,10 +10,16 @@ const config = {
     "@storybook/addon-essentials",
     "@storybook/preset-create-react-app",
     "@storybook/addon-interactions",
+    "@storybook/preset-scss",
   ],
   framework: {
     name: "@storybook/react-webpack5",
-    options: {},
+    options: {
+      postcssLoaderOptions: {
+        // When using postCSS 8
+        implementation: require("postcss"),
+      },
+    },
   },
   docs: {
     autodocs: "tag",
