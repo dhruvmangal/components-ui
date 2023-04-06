@@ -1,7 +1,7 @@
 /** @format */
 
 import * as React from "react";
-import logo from "../../assets/svg/homeLogo.svg";
+const logo = require("../../assets/svg/homeLogo.svg") as string;
 
 const ECHeader: React.FC<any> = (props) => {
   const [mobile, setMobile] = React.useState(false);
