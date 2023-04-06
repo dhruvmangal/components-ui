@@ -1,16 +1,29 @@
 /** @format */
 
 import * as React from "react";
+import logo from "../../assets/svg/homeLogo.svg";
 
 const ECHeader: React.FC<any> = (props) => {
   const [mobile, setMobile] = React.useState(false);
   const tabs = props.HeaderTabs || [];
 
+  let styleObj = {
+    BGColor: props.BGColor || "Teal",
+    FontSize: props.FontSize || "14px",
+    TextColor: props?.TextColor || "white",
+    HeaderLogo: props?.HeaderLogo || logo,
+  };
+  console.log("styleObj", styleObj);
   return (
     <header>
-      <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+      <nav
+        className={`flex items-center justify-between flex-wrap  p-6`}
+        style={{ backgroundColor: `${styleObj.BGColor}` }}
+      >
         <div className="flex items-center flex-shrink-0 text-white mr-6">
-          <span className="font-semibold text-xl tracking-tight">LOGO</span>
+          <div>
+            <img src={styleObj.HeaderLogo} className="h-12" alt="LOGO" />
+          </div>
         </div>
         <div className="block lg:hidden">
           <button
@@ -32,15 +45,19 @@ const ECHeader: React.FC<any> = (props) => {
             mobile ? "block" : "hidden"
           }`}
         >
-          <div className="text-sm flex-grow">
-            {tabs.map((tab: string, index: number) => (
-              <a
+          <div
+            className={`flex-grow`}
+            style={{ fontSize: `${styleObj.FontSize}` }}
+          >
+            {tabs.map((tab: any, index: number) => (
+              <p
+                onClick={tab?.onClick}
                 key={index}
-                href="#responsive-header"
-                className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+                className="block mt-4 lg:inline-block lg:mt-0  hover:text-white mr-4"
+                style={{ color: `${styleObj.TextColor}` }}
               >
-                {tab}
-              </a>
+                {tab?.name}
+              </p>
             ))}
           </div>
         </div>

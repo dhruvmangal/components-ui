@@ -17,19 +17,23 @@ export const LoggedIn = {
       name: "Jane Doe",
     },
     HeaderTabs: [
-      "Home",
-      "Company",
-      "Marketplace",
-      "Features",
-      "Team",
-      "Contact",
+      { name: "Home", onClick: () => console.log("Tabs") },
+      { name: "Company", onClick: () => console.log("Tabs") },
+      { name: "Marketplace", onClick: () => console.log("Tabs") },
+      { name: "Features", onClick: () => console.log("Tabs") },
+      { name: "Team", onClick: () => console.log("Tabs") },
+      { name: "Contact", onClick: () => console.log("Tabs") },
     ],
+    // BGColor: "#000",
+    // FontSize: "20px",
+    // TextColor:"black"
+    // HeaderLogo:"../assets/svg/...."
   },
 };
 
 export const LoggedOut = {
   args: {
-    HeaderTabs: [" Home"],
+    HeaderTabs: ["Home"],
   },
 };
 export const sub = {};

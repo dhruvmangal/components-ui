@@ -15,9 +15,11 @@ module.exports = {
     sm: "20px",
   },
   screens: {
-    tablet: "767px",
-    // => @media (min-width: 767px) { ... }
-    desktop: "991px",
-    // => @media (min-width: 991px) { ... }
+    xs: "0px",
+    sm: "600px",
+    tab: "800px",
+    md: "900px",
+    lg: "1200px",
+    xl: "1536px",
   },
 };
