@@ -5,9 +5,7 @@ import PropTypes from "prop-types";
 import ECHeader from "../components/header/header";
 import "./header.css";
 
-export const Header = () => (
-  <ECHeader />
-);
+export const Header = (props: any) => <ECHeader {...props} />;
 
 Header.propTypes = {
   user: PropTypes.shape({
