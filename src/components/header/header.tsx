@@ -22,7 +22,11 @@ const ECHeader: React.FC<any> = (props) => {
       >
         <div className="flex items-center flex-shrink-0 text-white mr-6">
           <div>
-            <img src={styleObj.HeaderLogo} className="h-12" alt="LOGO" />
+            <img
+              src={styleObj.HeaderLogo as unknown as string}
+              className="h-12"
+              alt="LOGO"
+            />
           </div>
         </div>
         <div className="block lg:hidden">
